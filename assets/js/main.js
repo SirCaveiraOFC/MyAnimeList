@@ -65,8 +65,20 @@ function changeInfosAndPercentage(auto = true, viewed, total) {
     if (eps_percentage_total[i] > 0) {
       progress_bar[i].style.width = `${eps_percentage_total[i]}%`;
     }
+
+    if (eps_percentage_total[i] == 0) {
+      progress_bar[i].style.backgroundImage = 'linear-gradient(315deg, #3f0d12 0%, #a71d31 74%)';
+    }
     
-    if (eps_percentage_total[i] >= 100) {
+    if (eps_percentage_total[i] <= 80 && eps_percentage_total[i] > 0) {
+      progress_bar[i].style.backgroundImage = 'linear-gradient(315deg, #a40606 0%, #d98324 74%)';
+    }
+    
+    if (eps_percentage_total[i] > 80 && eps_percentage_total[i] < 100) {
+      progress_bar[i].style.backgroundImage = 'linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)';
+    }
+
+    if (eps_percentage_total[i] == 100) {
       progress_bar[i].style.backgroundImage = 'linear-gradient(315deg, #63d471 0%, #233329 74%)';
     }
   }
@@ -265,7 +277,7 @@ async function addAnime() {
           document.getElementById('swal-input2').value,
           1,
           0,
-          document.getElementById('swal-input3').value,
+          parseInt(document.getElementById('swal-input3').value),
           0
         ]
       };
@@ -326,7 +338,7 @@ async function addAnime() {
         document.getElementById('swal-input2').value,
         nextAnimeInt,
         0,
-        document.getElementById('swal-input3').value,
+        parseInt(document.getElementById('swal-input3').value),
         0
       ];
 
@@ -483,7 +495,7 @@ async function changeEpisodiesViewedQuantity(e) {
     }
   })
 
-  var newQuantityEps = document.getElementById('swal-input1').value;
+  var newQuantityEps = parseInt(document.getElementById('swal-input1').value);
     
   if (formValues) {
     if (newQuantityEps != lastObjList[animeToEdit][3]) {
