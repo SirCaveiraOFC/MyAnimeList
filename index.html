@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>My Anime List</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8" />
+
+		<!-- [name] -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" />
+		<meta name="author" content="Sr.Caveira" />
+		<meta name="keywords" content="#" />
+		<meta name="description" content="Criar, alterar e excluir sua lista de animes." />
+		<meta name="theme-color" content="#000" />
+		<meta name="copyright" content="© 2022, Sr.Caveira." />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="noarchive" />
+		<meta name="generator" content="VS Code, Sublime Text 3" />
+		<meta name="rating" content="general" />
+
+		<!-- links -->
+		<link rel="icon" type="image/png" href="./assets/images/icons/icon-medium.png" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+		<!-- scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/76c1498e5f.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+	</head>
+	<body>
+    <div class="bg"></div>
+    <header class="header">
+      <h1><i class="fas fa-list"></i>&nbsp;My Anime List</h1>
+      <button class="btn btn-dark" id="exportList"><i class="fa-solid fa-file-export"></i>&nbsp;Exportar Lista</button>
+      <a download="animes_list.txt" id="downloadList" style="display: none;"><button class="btn btn-dark"><i class="fa-solid fa-download"></i>&nbsp;Download da Lista</button></a>
+      <input style="display: none;" type="file" id="listFile" onChange="readTxtFile(this.files)" />
+      <button class="btn btn-dark" id="importList"><i class="fa-solid fa-file-import"></i>&nbsp;Importar Lista</button>
+      <button class="btn btn-dark" id="deleteList"><i class="fa-solid fa-trash-can"></i>&nbsp;Apagar Lista</button>
+      <button class="btn btn-dark" id="addAnime"><i class="fa-solid fa-circle-plus"></i>&nbsp;Adicionar Anime</button>
+      <h1><i class="fas fa-code"></i>&nbsp;Developed BY: <a href="https://t.me/SrCaveiraOFC">Sr.Caveira</a></h1>
+    </header>
+
+    <div class="search-container">
+      <i class="fas fa-search" style="position: relative; left: 30px;"></i>
+      <input type="search" name="search" id="searchAnime" placeholder="Procure ... Animes..." />
+    </div>
+
+    <span id="resultsFor"><i class="fa-solid fa-square-poll-vertical"></i>&nbsp;Resultados para: <span id="resultsForAnimeName">asdsa</span></span>
+
+    <div class="animes-container">
+      <!-- <div class="anime-box" data-animename="Naruto Shippuden">
+        <i class="fa-solid fa-circle-xmark fa-2x removeAnime"></i>
+        <img src="https://www.anitube.site/wp-content/uploads/Naruto-Shippuden-Todos-os-Epis%C3%B3dios.jpg" alt="Naruto Shippuden" />
+        
+        <span class="anime-name">Naruto Shippuden</span>
+        <span class="eps_vieweds_and_total">0 / 500</span>
+
+        <div class="progress-bar">
+          <div class="bar">0%</div>
+        </div>
+      </div>
+
+      <div class="anime-box" data-animename="Nanatsu No Taizai">
+        <i class="fa-solid fa-circle-xmark fa-2x removeAnime"></i>
+        <img src="https://www.anitube.site/wp-content/uploads/Nanatsu-no-taizai-min.png" alt="Nanatsu No Taizai" />
+        
+        <span class="anime-name">Nanatsu No Taizai</span>
+        <span class="eps_vieweds_and_total">0 / 24</span>
+
+        <div class="progress-bar">
+          <div class="bar">0%</div>
+        </div>
+      </div> -->
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+	</body>
+</html>

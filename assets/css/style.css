@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "Animeace Ital";
+  src: url(".././fonts/Animeace Ital.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Animeace Ital', sans-serif;
+  color: #fff;
+}
+
+html {
+  background: rgb(53, 53, 53);
+}
+
+.bg {
+  /* background: #000; */
+  background-image: url('.././images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: grayscale(100%) brightness(20%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
+
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid #ddd;
+  z-index: 2;
+  padding: 10px;
+}
+
+header.header h1 {
+  color: #fff;
+  font-size: 17px;
+}
+
+/* Search */
+
+div.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+div.search-container input[type="search"] {
+  width: 700px;
+  padding: 20px;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  background: #000;
+  font-weight: bold;
+  padding-left: 40px;
+  font-size: 17px;
+}
+
+div.search-container input[type="search"]:focus {
+  outline: 4px solid rgb(146, 146, 146);
+}
+
+div.search-container input[type="search"]::-webkit-search-cancel-button{
+  cursor: pointer;
+}
+
+#resultsFor {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+  display: none;
+}
+
+#resultsForAnimeName {
+  text-transform: capitalize;
+  display: none;
+}
+
+/* Animes */
+
+div.animes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(210px + 20px)); /* 210px */
+  margin-top: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+div.animes-container div.anime-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: max-content;
+  height: max-content;
+  background: transparent;
+  color: #fff;
+  transition: .2s all ease;
+  border: 1px solid rgba(255, 255, 255, 0);
+  /* transform-style: preserve-3d; */
+  /* will-change: transform; */
+}
+
+div.animes-container div.anime-box i.removeAnime {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+div.animes-container div.anime-box:hover {
+  border: 1px solid #fff;
+  padding-bottom: 15px;
+  box-shadow: 10px 10px 5px rgba(255, 255, 255, 0.3);
+  /* transform: rotateZ(-5deg); */
+  transform: scale(1.1)
+}
+
+div.animes-container div.anime-box:hover i.removeAnime {
+  visibility: visible;
+}
+
+div.animes-container div.anime-box:hover > img {
+  padding: 0px;
+}
+
+div.animes-container div.anime-box:hover > span.anime-name {
+  margin-top: 10px;
+  font-size: 13px;
+  text-overflow: unset;
+  white-space: pre-wrap;
+}
+
+div.animes-container div.anime-box img {
+  max-width: 300px;
+  max-height: 300px;
+  padding: 10px;
+  transition: .2s all ease;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+div.animes-container div.anime-box span.anime-name {
+  text-align: center;
+  display: block;
+  text-transform: capitalize;
+  transition: .2s ease;
+  width: 200px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div.animes-container div.anime-box span.eps_vieweds_and_total {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 20px;
+  margin-top: 10px;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* Scroll */
+html::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: black;
+  background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.3) 20%,transparent 20%,transparent 40%,rgba(255, 255, 255, 0.3) 40%,rgba(255,255,255,.3) 60%,transparent 60%,transparent 80%,rgba(255, 255, 255, 0.3) 80%);
+  border-radius: 10px;
+}
+
+/* classes */
+.btn.btn-dark {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn.btn-dark:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn.btn-dark:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* mobile */
+
+@media only screen and (max-width: 600px) {
+  .bg {
+    background-attachment: scroll;
+  }
+
+  header.header h1 {
+    font-size: 11px;
+  }
+
+  header.header button {
+    transform: scale(0.7);
+  }
+
+  header.header {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: max-content;
+  }
+
+  div.animes-container {
+    grid-template-columns: repeat(auto-fill, 210px); /* 210px */
+  }
+
+  div.animes-container div.anime-box {
+    margin-bottom: 40px;
+  }
+
+  div.search-container {
+    margin-top: 270px;
+  }
+
+  div.search-container input[type="search"] {
+    width: 360px;
+    font-size: 11px;
+  }
+}
+
+/* progress-bar */
+
+div.progress-bar {
+	position: relative;
+	min-width: 150px;
+  height: 35px;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+div.progress-bar div.bar {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+	position: absolute;
+	background: rgb(162, 169, 172);
+  width: 0%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  /* font-weight: bold; */
+  color: #fff;
+  text-align: center;
+  /* padding: 5px; */
+}
