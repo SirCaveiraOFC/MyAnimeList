@@ -480,8 +480,8 @@ async function changeEpisodiesViewedQuantity(e) {
   var animeEpisodiesTotalQuantity = parseInt(animeEpisodiesQuantitySplit[1]);
   
   const { value: formValues } = await Swal.fire({
-    title: `Editar Quantia de Episódios de ${animeNameToEdit}`,
-    html: `<input id="swal-input1" type="number" class="swal2-input" placeholder="Quantia de Episódios">`,
+    title: `Editar Quantia de Episódios assistidos de ${animeNameToEdit}`,
+    html: `<input id="swal-input1" type="number" class="swal2-input" placeholder="Quantia de Episódios assistidos">`,
     focusConfirm: false,
     background: '#0f0f0f',
     confirmButtonText: 'Editar',
