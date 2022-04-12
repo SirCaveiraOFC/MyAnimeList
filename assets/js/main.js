@@ -86,14 +86,12 @@ function changeInfosAndPercentage(auto = true, viewed, total) {
 
 function hiddenHeaderWhenScrollDown() {
   let scrollY = window.scrollY;
-  let screenW = window.innerWidth;
 
-  if (screenW <= 600 && scrollY >= 50) {
+  if (scrollY >= 50) {
     header_site.style.display = 'none';
   } else {
     header_site.style.display = 'flex';
   }
-  
 }
 
 function searchAnimes() {
