@@ -65,6 +65,10 @@ function changeInfosAndPercentage(auto = true, viewed, total) {
     if (eps_percentage_total[i] > 0) {
       progress_bar[i].style.width = `${eps_percentage_total[i]}%`;
     }
+    
+    if (eps_percentage_total[i] >= 100) {
+      progress_bar[i].style.backgroundImage = 'linear-gradient(315deg, #63d471 0%, #233329 74%)';
+    }
   }
 }
 
