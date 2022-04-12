@@ -1,6 +1,6 @@
 // Coded
 // BY
-// https://t.me/@SrCaveira
+// https://t.me/SrCaveira
 
 let animeQuantity = 0;
 let lastAnimeBox;
