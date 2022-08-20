@@ -587,8 +587,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Desborrar e Borrar box de animes
   for (let i = 0; i < animes.length; i++) {
-    animes[i].addEventListener('mouseover', blurAnimesBox);
-    animes[i].addEventListener('mouseout', removeBlurAnimesBox);
+    //animes[i].addEventListener('mouseover', blurAnimesBox);
+    //animes[i].addEventListener('mouseout', removeBlurAnimesBox);
   }
 
   // Remover Animes ao clicar no botão de remover
